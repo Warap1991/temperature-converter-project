@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temperature converter project</title>
+    <style>
+        /* Style de base */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* Style de l'en-tête */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            
+        }
+        /* Style du premier div avec espace en-dessous */
+        .div1 {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        /* Style du deuxième div plus bas */
+        .div2 {
+            background-color: #ddd;
+            padding: 20px;
+            flex-grow: 1;
+            margin: 20px 0;
+        }
+        /* Style du footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+        
+        }
+      
+        label {
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        input[type="number"] {
+            width: 85%;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border: 1px solid #ccc;
+        }
+        
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ccc;
+        }
+        
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        p.result {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        /* Media query pour rendre la page responsive */
+        @media (max-width: 768px) {
+            header {
+                font-size: 18px;
+            }
+            .div1, .div2 {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>temperature converter project</h1>
+    </header>
+    <div class="div1">
+        <h2>Théorie sur les unités de mesure de la température</h2>
+        <p>
+            <p>
+                Kelvin (K), Celsius (°C), and Fahrenheit (°F) are three commonly used units of temperature measurement. Each unit has its own scale and reference points, and they are used in different regions of the world. Here's an explanation of the differences between these temperature units:
+            </p>
+            <ol>
+                <li>Kelvin (K):The Kelvin is an absolute temperature scale which starts from absolute zero, which is the point at which all molecular motion ceases. Absolute zero is approximately -273.15°C or -459.67°F.</li>
+                <li>Celsius (°C):The Celsius scale, also known as the centigrade scale, is based on the freezing and boiling points of water at standard atmospheric pressure. 0°C is the freezing point of water, and 100°C is the boiling point of water at sea level.The conversion formula between Celsius and Kelvin is: Kelvin = Celsius + 273.15</li>
+                <li>Fahrenheit (°F):The Fahrenheit scale is based on the freezing and boiling points of water, but it uses different reference points than Celsius. 32°F is the freezing point of water, and 212°F is the boiling point of water at standard atmospheric pressure.</li>
+            </ol>
+            <p>
+                The conversion formula between Fahrenheit and Celsius is: Celsius = (Fahrenheit - 32) × 5/9.
+                The conversion formula between Fahrenheit and Kelvin is more complex: Kelvin = (Fahrenheit + 459.67) × 5/9.
+            </p>
+        </p>
+    </div>
+    <div class="div2">
+        <h2>Temperature Converter</h2>
+        <label for="temperature">Enter Temperature:</label>
+        <input type="number" id="temperature" placeholder="Enter temperature" step="any" required>
+
+        <label for="fromUnit">From Unit:</label>
+        <select id="fromUnit">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+
+        <label for="toUnit">To Unit:</label>
+        <select id="toUnit">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+        <button onclick="convertTemperature()">Convert</button>
+        <p class="result">Result: <span id="result">-</span></p>
+    </div>
+    <footer>
+        <p>&copy; 2023-By TCHAMASSE Warapisse</p>
+    </footer>
+    <script src="index1.js"></script>
+</body>
+</html>
